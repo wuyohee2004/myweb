@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    {% if name_list %}
+        <ul>
+        {% for i in name_list %}
+            <li>{{ i }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+    <table border="solid black">
+        <th>Name</th><th>age</th>
+    {% for key,value in name_dict %}
+        <tr>
+            {% ifequal key 'Alex' %}
+                <td>{{ key }}</td><td>{{ value }}</td>
+                <td style="color: red">found Alex !!!</td>
+            {% else %}
+                <td>{{ key }}</td><td>{{ value }}</td>
+            {% endifequal %}
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>
